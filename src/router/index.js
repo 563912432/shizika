@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import list from '@/components/list'
 import detail from '@/components/detail'
+import introduce from '@/components/introduce'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/d/:id/:cid',
       name: 'd',
       component: detail
+    },
+    {
+      path: '/introduce',
+      name: '/introduce',
+      component: introduce
     }
   ]
 })

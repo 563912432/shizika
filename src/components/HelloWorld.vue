@@ -11,6 +11,9 @@
           <i class="el-icon-arrow-right" style="font-weight: bold;color: #adadad"></i>　{{ item.title }}
         </li>
       </ul>
+      <div class="img-container" @click="videoPlay">
+        <img src="../assets/szk.png" alt="产品介绍">
+      </div>
     </div>
     <v-footer></v-footer>
   </div>
@@ -61,6 +64,9 @@
       click (el) {
         let cid = el.target.getAttribute('cid')
         this.$router.push({path: '/list/' + cid})
+      },
+      videoPlay () {
+        this.$router.push({path: '/introduce'})
       }
     }
   }
@@ -84,6 +90,7 @@
     flex-direction: column;
     overflow-y: auto;
     padding-top: 5px;
+    z-index: 0;
   }
 
   .hello .content ul {
@@ -105,5 +112,18 @@
     background-color: #bbd7d8;
     margin: 3px;
     border-radius: 3px;
+  }
+
+  .hello .img-container {
+    width: 50%;
+    height: auto;
+    text-align: center;
+    align-self: center;
+    background-color: transparent;
+  }
+
+  .hello .img-container img {
+    width: 100%;
+    height: auto;
   }
 </style>

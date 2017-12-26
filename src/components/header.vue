@@ -13,6 +13,7 @@
     height: 75px;
     width: 100%;
     padding: 0;
+    z-index: 1;
   }
   .header img{
     height: 100%;
