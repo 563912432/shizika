@@ -25,9 +25,9 @@
         <div class="wrapper">
           <img v-if="thumb" :src="host + 'Uploads/' + thumb" width="100%" height="100%">
           <audio ref="audio"></audio>
-          <!--<div class="learn">
+          <div class="learn">
             <img src="../assets/learn.png" @click="learn($event)" tag="1" style="width: 120px;height: 24px">
-          </div>-->
+          </div>
         </div>
       </div>
     </div>
