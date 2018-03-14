@@ -25,9 +25,9 @@
         <div class="wrapper">
           <img v-if="thumb" :src="host + 'Uploads/' + thumb" width="100%" height="100%">
           <audio ref="audio"></audio>
-          <div class="learn">
-            <img src="../assets/learn.png" @click="learn($event)" tag="1" style="width: 120px;height: 24px">
-          </div>
+        </div>
+        <div class="learn">
+          <img src="../assets/learn.png" @click="learn($event)" tag="1" style="width: 120px;height: 24px">
         </div>
       </div>
     </div>
@@ -202,6 +202,7 @@
     font-size: 13px;
     color: #fff;
     background-color: #038384;
+    z-index: 1;
   }
 
   .detail .content .menu-title {
@@ -225,14 +226,16 @@
     flex: 1;
     display: flex;
     overflow-y: auto;
+    z-index: 1;
   }
 
-  .detail .content .wrapper .learn {
+  .detail .content .learn {
     position: absolute;
     bottom: 10px;
     text-align: center;
     width: 100%;
     height: auto;
+    z-index: 2;
   }
 
   .learn-gif {
