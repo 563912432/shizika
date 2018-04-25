@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="learn-gif" v-show="!isShow" @click='learn($event)' tag='1'>
-      <img v-if="gif" id="gif" style="width: 100%;height: 60%">
+      <img v-if="gif" id="gif" style="width: 100%;">
       <span v-else style="color: #ffffff;font-size: 20px">暂无图片</span>
     </div>
   </div>
@@ -184,6 +184,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .detail .content {
@@ -239,7 +240,12 @@
   }
 
   .learn-gif {
-    flex: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
