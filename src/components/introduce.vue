@@ -8,6 +8,7 @@
 
   export default {
     name: 'introduce',
+    host: '/',
     data () {
       return {
         player: null
