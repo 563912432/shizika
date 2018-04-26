@@ -8,10 +8,10 @@
 
   export default {
     name: 'introduce',
-    host: '/',
     data () {
       return {
-        player: null
+        player: null,
+        host: '/'
       }
     },
     mounted () {
