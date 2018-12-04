@@ -1,5 +1,6 @@
 <template>
   <div class="introduce" @click="outer">
+    <div class="back" @click="outer"></div>
     <div id="showVideo"></div>
   </div>
 </template>
@@ -15,7 +16,7 @@
       }
     },
     mounted () {
-      let vid = 'dbadf91f04386b8b072869066b788079_d'
+      let vid = this.$route.params.url
       this.get(this.host + 'Api/Video/getPolySign/code/' + vid, res => {
         let response = JSON.parse(res)
         if (response.status) {
@@ -64,6 +65,20 @@
     flex: 1;
     background-color: #212121;
     z-index: 0;
+  }
+
+  .introduce .back{
+    background: url("../assets/back.png") no-repeat center;
+    background-size:20px 20px;
+    border: solid 2px #ffffff;
+    border-radius: 20px;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    padding: 1px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
   }
 
   .introduce #showVideo {
