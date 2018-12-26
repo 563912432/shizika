@@ -16,29 +16,33 @@
       }
     },
     mounted () {
-      let vid = this.$route.params.url
-      this.get(this.host + 'Api/Video/getPolySign/code/' + vid, res => {
-        let response = JSON.parse(res)
-        if (response.status) {
-          let polySign = JSON.parse(response.info)
-          let videoHeight = 200
-          let height = window.screen.height
-          let viewHeight = window.innerHeight
-          let titleHeight = height - viewHeight
-          let marginTop = (height - videoHeight) / 2 - titleHeight
-          document.getElementById('showVideo').style.marginTop = marginTop + 'px'
-          this.player = polyvObject('#showVideo').videoPlayer({
-            'width': '100%',
-            'height': videoHeight,
-            'vid': vid,
-            'ts': polySign.ts,
-            'sign': polySign.sign
-          })
-          this.player.j2s_resumeVideo()
-        } else {
-          console.log(res.info)
-        }
-      })
+      let vid = this.$route.query.url
+      if (vid) {
+        this.get(this.host + 'Api/Video/getPolySign/code/' + vid, res => {
+          let response = JSON.parse(res)
+          if (response.status) {
+            let polySign = JSON.parse(response.info)
+            let videoHeight = 200
+            let height = window.screen.height
+            let viewHeight = window.innerHeight
+            let titleHeight = height - viewHeight
+            let marginTop = (height - videoHeight) / 2 - titleHeight
+            document.getElementById('showVideo').style.marginTop = marginTop + 'px'
+            this.player = polyvObject('#showVideo').videoPlayer({
+              'width': '100%',
+              'height': videoHeight,
+              'vid': vid,
+              'ts': polySign.ts,
+              'sign': polySign.sign
+            })
+            this.player.j2s_resumeVideo()
+          } else {
+            console.log(res.info)
+          }
+        })
+      } else {
+        window.location.href = '/videoErweima62'
+      }
     },
     methods: {
       get (url, fn) { // XMLHttpRequest对象用于在后台与服务器交换数据

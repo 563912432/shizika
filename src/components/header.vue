@@ -14,7 +14,7 @@
     methods: {
       toUrl: function () {
         if (this.url) {
-          this.$router.push(`/introduce/${this.url}`)
+          this.$router.push(`/introduce?url=${this.url}`)
         }
       }
     }

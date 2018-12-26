@@ -122,7 +122,7 @@
             window.location.href = hrefVideo
             break
           case 2: // 视频代码
-            this.$router.push(`/introduce/${hrefVideo}`)
+            this.$router.push(`/introduce?url=${hrefVideo}`)
             break
           case 3: // 活动详情
             this.$store.commit('saveTopContent', content)

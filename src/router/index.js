@@ -26,7 +26,7 @@ export default new Router({
       component: detail
     },
     {
-      path: '/introduce/:url',
+      path: '/introduce',
       name: '/introduce',
       component: introduce
     },
